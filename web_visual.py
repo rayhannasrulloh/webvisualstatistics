@@ -5,9 +5,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.decomposition import PCA
 
-# Load dataset
+# Load dataset tanpa header
 file_path = "selamat.csv"
-df = pd.read_csv(file_path)
+df = pd.read_csv(file_path, header=None)
+
+# Tambahkan indeks untuk identifikasi kolom
+df.columns = [f"Feature_{i}" for i in range(df.shape[1])]
 
 def plot_heatmap():
     st.subheader("Heatmap of Dataset")
@@ -62,3 +65,6 @@ plot_histogram()
 plot_population_vs_sample()
 
 st.write("Developed with ❤️ using Streamlit")
+st.write("1. Rayhan Roshidi Nasrulloh")
+st.write("2. Syah Reza Falevi")
+st.write("3. Reza Fahlevi")
